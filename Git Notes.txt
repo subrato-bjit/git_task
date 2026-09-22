@@ -1,0 +1,269 @@
+bjit@30272-Subrato MINGW64 ~
+$ git config --global user.name "Subrato Chandra Pal"
+
+bjit@30272-Subrato MINGW64 ~
+$ git config --global user.email "subrato.pal@bjitacademy.com"
+
+bjit@30272-Subrato MINGW64 ~
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+credential.helper=manager
+user.name=Subrato Chandra Pal
+user.email=subrato.pal@bjitacademy.com
+
+bjit@30272-Subrato MINGW64 ~
+$ mkdir test-project
+
+bjit@30272-Subrato MINGW64 ~
+$ pwd
+/c/Users/bjit
+
+bjit@30272-Subrato MINGW64 ~
+$ cd test-project
+
+bjit@30272-Subrato MINGW64 ~/test-project
+$ git init
+Initialized empty Git repository in C:/Users/bjit/test-project/.git/
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ touch test.txt
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git add test.txt
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   test.txt
+
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ touch index.html
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ touch bluestyle.css
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bluestyle.css
+        index.html
+
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git add --all
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   bluestyle.css
+        new file:   index.html
+        new file:   test.txt
+
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ vi test.txt
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   bluestyle.css
+        new file:   index.html
+        new file:   test.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git diff
+diff --git a/test.txt b/test.txt
+index e69de29..01e79c3 100644
+--- a/test.txt
++++ b/test.txt
+@@ -0,0 +1,3 @@
++1
++2
++3
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git rm --cached index.html
+rm 'index.html'
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   bluestyle.css
+        new file:   test.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git rm --f bluestyle.css
+rm 'bluestyle.css'
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   test.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git commit -m "First Commit"
+[master (root-commit) d4e1b7e] First Commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git log
+commit d4e1b7e580728b70e5aacf51585c87ce928ff8c4
+Author: Subrato Chandra Pal <subrato.pal@bjitacademy.com>
+Date:   Thu Sep 17 12:33:08 2026 +0600
+
+    First Commit
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git log --oneline
+d4e1b7e First Commit
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git commit -a -m "Update my last commit"
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+[master warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+18f7262] Update my last commit
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+ 1 file changed, 3 insertions(+)
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git log
+commit 18f72624221c14984a03a4ebce404fed53e136dd
+Author: Subrato Chandra Pal <subrato.pal@bjitacademy.com>
+Date:   Thu Sep 17 12:37:10 2026 +0600
+
+    Update my last commit
+
+commit d4e1b7e580728b70e5aacf51585c87ce928ff8c4
+Author: Subrato Chandra Pal <subrato.pal@bjitacademy.com>
+Date:   Thu Sep 17 12:33:08 2026 +0600
+
+    First Commit
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git commit --amend -m "Again update the first commit"
+[master warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+da7be03] Again update the first commit
+ Date: Thu Sep 17 12:37:10 2026 +0600
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+ 1 file changed, 3 insertions(+)
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$ git log
+commit da7be0384d426b301d8803ca2dd0b5e4b085e931
+Author: Subrato Chandra Pal <subrato.pal@bjitacademy.com>
+Date:   Thu Sep 17 12:37:10 2026 +0600
+
+    Again update the first commit
+
+commit d4e1b7e580728b70e5aacf51585c87ce928ff8c4
+Author: Subrato Chandra Pal <subrato.pal@bjitacademy.com>
+Date:   Thu Sep 17 12:33:08 2026 +0600
+
+    First Commit
+
+bjit@30272-Subrato MINGW64 ~/test-project (master)
+$
